@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function Circle(radius, color){
+        //     this.radius= radius;
+        //     this.color=color;
+            
+
+        //     this.getRadius = function(){
+        //         return this.radius;
+        //     }
+            
+        //     this.Area = function(){
+        //         return Math.PI*this.radius*this.radius;
+        //     }
+        // }
+        // let dh1 = new Circle(5,"Pink");
+        // console.log(dh1);
+        // console.log(dh1.Area());
+        class Circle{
+            constructor(radius,color){
+                this.radius = radius;
+                this.color = color;
+            }
+            getInfor(){
+                return (this.radius + ','+ this.color);
+            }
+            getRadius(){
+                return this.radius;
+            }
+            getArea(){
+                return Math.PI*this.radius*this.radius;
+            }
+        } 
+        let dha = new Circle(2,'pink');
+        console.log(dha.getInfor());
+        console.log(dha.getRadius());
+        console.log(dha.getArea());
+        
+
+    </script>
+    
+</body>
+</html>

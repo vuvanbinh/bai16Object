@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeHinhChuNhat</title>
+</head>
+<!-- Viết một lớp các đối tượng hình chữ nhật lấy tên là Rectangle, mỗi hình chữ nhật đều có những đặc tính sau:
++ Có thông số chiều dài (int).
++ Có thông số chiều rộng (int).
++ Có tính năng tính diện tích.
+    + Có tính năng tính chu vi.
+     + Có tính năng hiển thị trực quan hình chữ nhật bằng cách vẽ lên canvas
+      Sử dụng lớp Rectangle vừa định nghĩa để viết một chương trình JavaScript  với kịch bản như sau:
+        Khai báo và khởi tạo một đối tượng kiểu Rectangle.
+          Hiển thị hình chữ nhật trên màn hình web
+             Thay đổi chiều dài và chiều rộng của hình chữ nhật.
+                In ra màn hình diện tích và chu vi của hình chữ nhật đó. -->
+
+<h1>Hình Chữ Nhật</h1>
+<input type="number" placeholder="Nhập chiều dài" id="dai">
+<input type="number" placeholder="Nhập chiều rộng" id="rong">
+<button onclick="tinh()"> Tính toán,Vẽ </button>
+<button onclick="ve()"> Vẽ </button>
+<p> Chu Vi : <span id="chuvi"></span></p>
+<p> Diện Tích : <span id="dientich"></span></p>
+<br><br>
+<canvas id="myCanvas" width="700px" height="400px" style="border:2px solid #1fdc64e3;"></canvas>
+
+<body>
+    <script>
+
+        class Rectangle {
+            constructor(chieudai, chieurong) {
+                this.chieudai = chieudai;
+                this.chieurong = chieurong;
+            }
+            chuvi() {
+                return (this.chieudai + this.chieurong) / 2;
+            }
+            dientich() {
+                return (this.chieudai * this.chieurong);
+            }
+            vehinh() {
+                let ve = document.getElementById('myCanvas');
+                let ctx = ve.getContext("2d");
+                ctx.fillStyle = "#FF0000";
+                ctx.fillRect(70, 50, this.chieudai, this.chieurong);
+            }
+        }
+        function tinh() {
+            let dai = +document.getElementById("dai").value;
+            let rong = +document.getElementById("rong").value;
+            let cv = new Rectangle(dai, rong);
+            document.getElementById("chuvi").innerHTML = cv.chuvi();
+            document.getElementById("dientich").innerHTML = cv.dientich();
+        
+        }
+        function ve(){
+            let dai = +document.getElementById("dai").value;
+            let rong = +document.getElementById("rong").value;
+            let ve = new Rectangle(dai,rong);
+            ve.vehinh();
+        }
+       
+
+    </script>
+
+</body>
+
+</html>

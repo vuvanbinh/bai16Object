@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- Viết một lớp các đối tượng điện thoại lấy tên là Mobile, mỗi một chiếc mobile 
+    phone khi được tạo ra sẽ mang những đặc điểm sau:
+
+Có một thông số về trạng thái pin tính bằng đơn vị số nguyên (tối đa 100 đv)
+Có một vùng nhớ dùng để lưu tin nhắn đang soạn thảo.
+Có một vùng nhớ dùng để lưu tin nhắn trong hộp thư đến.
+Có một vùng nhớ dùng để lưu tin nhắn đã gửi.
+Có chức năng kiểm tra trạng thái điện thoại bật hay tắt.
+Có chức năng bật và tắt điện thoại.
+Có chức năng xạc pin điện thoại.
+Có chức năng soạn tin nhắn.
+Có chức năng nhận tin nhắn từ một chiếc mobile khác.
+Có chức năng gửi tin nhắn tới một chiếc mobile khác.
+Có chức năng xem tin trong hộp thư đến.
+Có chức năng xem tin đã gửi.
+Sau mỗi lần sử dụng một chức năng, năng lượng pin sẽ giảm đi một đơn vị.
+Các chức năng không thể hoạt động nếu điện thoại chưa bật.
+Khởi tạo các đối tượng điện thoại và thực hiện kịch bản sau:
+
+Có một chiếc điện thoại nokia và một chiếc iphone
+Chiếc điện thoại nokia soạn tin nhắn với nội dung bất kỳ và gửi cho chiếc 
+ iphoneChiếc iphone kiểm tra inbox và hiển thị tin đó. -->
+
+<body>
+    <script>
+        class mobile {
+            constructor(name, pin, tatBat) {
+                this.tendienthoai = name;
+                this.pin = pin;
+                this.hopthuden = [];
+                this.hopthudi = [];
+                this.tatBat = tatBat;
+
+            }
+            kttrangthai() {
+                console.log(this.tatBat);
+            }
+            guitinnhan(gui, dtnhan) {
+                if (this.tatBat == 'bat') {
+                    dtnhan.hopthuden.push(gui);
+                    this.hopthudi.push(gui);
+                    this.pin -= 1;
+                } else {
+                    console.log('Dien thoai dang tat');
+                }
+            }
+            hienthitinnhanden() {
+                if (this.tatBat == 'bat') {
+                    console.log(this.hopthuden);
+                    this.pin -= 1;
+                } else {
+                    console.log('Dien thoai dang tat');
+                }
+            }
+
+            hienthitinnhandagui() {
+                if (this.tatBat == 'bat') {
+                    console.log(this.hopthudi);
+                    this.pin -= 1;
+                } else {
+                    console.log('Dien thoai dang tat');
+                }
+
+            }
+
+            ktPin() {
+                if(this.tatBat == 'bat'){
+                    console.log(this.pin);
+                }else{
+                    console.log('Dien thoai dang tat');
+                }
+            }
+
+            sacPin(){
+                if(this.tatBat == 'bat'){
+                    this.pin += 1; 
+                   
+                }else{
+                    console.log('Dien thoai dang tat');
+                }
+            }
+        }
+
+        let iphone = new mobile('iphone12', 100, 'bat');
+        let nokia = new mobile('nokia 90',100,'bat');
+        iphone.guitinnhan('dang lam gi the ', nokia);
+        iphone.sacPin()
+        iphone.ktPin()
+       
+        
+
+        // let nokia = new mobile('nokia 90');
+        //     iphone.guitinnhan('dang lm gi?',nokia);
+        //     nokia.hienthitinnhanden();
+        //     nokia.guitinnhan('Dang an thit cho ',iphone);
+        //     iphone.hienthitinnhanden();
+        //     iphone.guitinnhan('the ma khong moi ',nokia);
+        //     nokia.hienthitinnhanden();
+        //     nokia.guitinnhan('Khong thich ',iphone);
+        //     iphone.hienthitinnhanden();
+        //     iphone.guitinnhan('ban hay qua',nokia);
+        //     iphone.kiemtrapin();
+        //     nokia.hienthitinnhanden();
+        //     nokia.kiemtrapin();
+        //     nokia.hienthitinnhandagui();
+        //     nokia.kiemtrapin()
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

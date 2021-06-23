@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Temperature {
+            constructor(c) {
+                if (c > (-273)) {
+                    this.c = c;
+                } else { return false };
+
+            }
+            getDoF() {
+                return (4.5 * this.c + 32);
+            }
+            getDoKenvin() {
+                return (this.c + 273.15);
+            }
+        }
+        let hienthi = new Temperature(25);
+        document.write('Do F = ' + hienthi.getDoF() + '<br>')
+        document.write('Do Kevin = ' + hienthi.getDoKenvin())
+
+    </script>
+</body>
+
+</html>

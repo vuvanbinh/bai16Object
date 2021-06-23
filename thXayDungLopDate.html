@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- Thuộc tính:
+
+Day (ngày) sẽ nhận vào giá trị dạng số nguyên
+ Month (tháng) sẽ nhận vào giá trị dạng số nguyên
+  year (năm) sẽ nhận vào giá trị dạng số nguyên
+    Phương thức:
+        Date(day, month, year) là phương thức khởi tạo để tạo đối tượng với 3 tham số.
+                getDay(), getMonth(), getYear() là phương thức trả về ngày, tháng, năm 
+                  setDay(), setMonth(), setYear() là phương thức thiết đặt lại giá trị mới cho ngày tháng năm -->
+
+<body>
+    <script>
+        class myDate {
+            constructor(day, month, year) {
+                this.day = day;
+                this.month = month;
+                this.year = year;
+            }
+            getDay() {
+                return this.day;
+            }
+            getMonth() {
+                return this.month;
+            }
+            getYear() {
+                return this.year;
+            }
+
+            setDay(newday) {
+               this.day = newday;
+            }
+            setMonth(newmonth) {
+                this.month = newmonth;   
+            }
+            setYear(newyear) {
+                this.year = newyear;
+            }
+        }
+        let Date = new myDate(11, 06, 1996);
+        console.log(Date.getDay() + '/' + Date.getMonth() + '/' + Date.getYear());
+
+        Date.setDay(30) ;
+        Date.setMonth(06);
+        Date.setYear(1996);
+        
+        console.log( 'sau khi gan lai gia tri moi '+ Date.getDay() + '/' + Date.getMonth() + '/' + Date.getYear());
+
+
+    </script>
+</body>
+
+</html>
